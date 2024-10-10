@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles_about.css">
+        <link rel="stylesheet" href="styles_about_small.css">
+        <link rel="stylesheet" href="styles_about_phone.css">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+        <script
+            src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.js"></script>
+    </head>
+    <body>
+        <div id="cursor" class="custom-cursor"></div>
+        <div data-scroll-container class="scroll" data-scroll>
+            <div class="abovethefold" id="abovethefold">
+                <div class="navigation">
+                    <p class="raulmarcelino">rm.</p>
+                    <div class="menu">
+                        <ul>
+                            <a href>about</a>
+                            <a href></a>
+                        </ul>
+                    </div>
+                    <a href="#contactme">contact</a>
+                </div>
+                <div class="about-me">
+                    <div class="me">
+                        <img src="unnamed.jpg" alt="">
+                    </div>
+                    <div class="about">
+                        <p>I'm Raúl, a computer engineer based in Galicia, Spain.</p>
+                        <p>I'm a creative, restless, and geeky person who loves volleyball, video games, and technology.</p>
+                        <p></p>
+                        <div>
+                            <p>I've worked with this companies</p>
+                            <div>
+                                <img src="" alt="">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-scroll
+                data-scroll-speed="2.1"
+                data-scroll-delay="0.2" class="data-scroll">
+                <div class="slider-container two">
+                    <div class="slider">
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                        <span>- Get it touch -</span>
+                    </div>
+                </div>
+                <div class="contactme" id="contactme">
+                    <p class="contactme-text">CONTACT ME ON</p>
+                    <div class="social">
+                        <a href="mailto:rmarcelinodocio@gmail.com">EMAIL</a>
+                        <a href="https://www.instagram.com/rauulmarcelino/">INSTAGRAM</a>
+                        <a href="https://www.linkedin.com/in/raulmarcelino/">LINKEDIN</a>
+                    </div>
+                </div>
+                <div class="footer">
+                    <p>Developed by</p>
+                    <p class="raulmarcelino">rm.</p>
+                    <p>All rights reserved</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Inicializa Locomotive Scroll
+            const scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true,
+                lerp: 0.1, 
+                multiplier: 1,
+                inertia: 0.4 
+            });
+
+            // Ejemplo de evento de Locomotive Scroll
+            scroll.on('call', (func, direction, obj) => {
+                console.log(`Función llamada: ${func}, Dirección: ${direction}`);
+            });
+        </script>
+
+        <script>
+             // Referencia al div que será el cursor personalizado
+            const cursor = document.getElementById('cursor');
+            let cursorX = 0, cursorY = 0;
+            let targetX = 0, targetY = 0;
+                    
+            // Evento para actualizar la posición del cursor con un delay
+            document.addEventListener('mousemove', (e) => {
+                targetX = e.pageX;
+                targetY = e.pageY;
+            });
+            
+            // Función para mover el cursor suavemente con delay
+            function animateCursor() {
+                cursorX += (targetX - cursorX) * 0.8; // Ajustar la velocidad del delay
+                cursorY += (targetY - cursorY) * 0.8;
+                cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`; // Mover el cursor
+            
+                // Obtener el elemento que está directamente debajo del cursor
+                const elementBelow = document.elementFromPoint(cursorX, cursorY); 
+            
+                if (elementBelow) {
+                    // Obtener el color de fondo del elemento debajo
+                    const backgroundColor = window.getComputedStyle(elementBelow).backgroundColor;
+                
+                    // Convertir el color de fondo a un objeto de color RGBA
+                    const rgba = backgroundColor.match(/\d+/g);
+                    if (rgba) {
+                        const r = parseInt(rgba[0]);
+                        const g = parseInt(rgba[1]);
+                        const b = parseInt(rgba[2]);
+                    
+                        // Calcular la luminosidad
+                        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+                    
+                        // Cambiar el color del cursor dependiendo de la luminosidad
+                        if (brightness < 128) {
+                            cursor.style.backgroundColor = 'white'; // Fondo oscuro, cursor blanco
+                        } else {
+                            cursor.style.backgroundColor = 'black'; // Fondo claro, cursor negro
+                        }
+                    }
+                }
+            
+                requestAnimationFrame(animateCursor); // Volver a llamar a la animación en cada frame
+            }
+            
+            // Iniciar la animación del cursor
+            animateCursor(); 
+        </script>
+    </body>
+</html>

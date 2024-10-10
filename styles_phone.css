@@ -1,0 +1,58 @@
+@media (max-width: 787px) {
+
+    .custom-cursor {
+        display: none;
+    }
+    .slider-container{
+        height: 36px;
+    }
+
+    .slider span {
+        font-size: 24px;
+    }
+
+    .work-item {
+        margin: 0px;
+        margin-bottom: 2vh;
+    }
+
+    .work-item-photo {
+        border-radius: 0px;
+    }
+
+    .work-item img {
+        border-radius: 0px;
+    }
+
+    .work-item-title {
+        margin: 0 20px;
+        font-size: 24px;
+    }
+
+    .work-item-description {
+        margin: 0 20px;
+        font-size: 20px;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contactme a {
+        margin: 10px 20px;
+        text-align: center;
+        width: 80%;
+        
+    }
+
+    .contactme {
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0px;
+    }
+
+  }

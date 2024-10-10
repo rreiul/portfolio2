@@ -1,0 +1,41 @@
+@media (max-width: 1180px) {
+    .line1{
+        font-size: 10vw;
+    }
+
+    .work-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .work-item {
+        margin: 0px;
+        margin-bottom: 2vh;
+    }
+
+    .work-item-photo {
+        border-radius: 0px;
+    }
+
+    .work-item img {
+        border-radius: 0px;
+    }
+
+    .work-item-title {
+        margin: 0 20px;
+    }
+
+    .work-item-description {
+        margin: 0 20px;
+    }
+
+    .contactme a {
+        font-size: 18px;
+        padding: 8px 36px;
+    }
+
+    .social {
+        margin-top: 20px;
+    }
+
+  }
