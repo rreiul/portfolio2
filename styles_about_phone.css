@@ -3,6 +3,7 @@
     .custom-cursor {
         display: none;
     }
+
     .slider-container{
         height: 36px;
     }
@@ -11,32 +12,28 @@
         font-size: 24px;
     }
 
-    .line1{
-        padding: 40px 0px;
+    .about-me {
+        font-size: 30px;
+        padding: 0;
+        margin: 20px;
     }
 
-    .work-item {
-        margin: 0px;
-        margin-bottom: 2vh;
+    .about {
+        width: 90%;
     }
 
-    .work-item-photo {
-        border-radius: 0px;
+    .logo-div {
+        width: 150px;
+        height: 100px;
+        margin-right: 10px;
+        margin-bottom: 10px;
     }
 
-    .work-item img {
-        border-radius: 0px;
+    .logos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .work-item-title {
-        margin: 0 20px;
-        font-size: 24px;
-    }
-
-    .work-item-description {
-        margin: 0 20px;
-        font-size: 20px;
-    }
 
     .social {
         display: flex;

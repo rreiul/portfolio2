@@ -1,0 +1,22 @@
+@media (max-width: 1180px) {
+    .about-me {
+        flex-direction: column;
+    }
+
+    .me {
+        width: 100%;
+    }
+
+    .me img {
+        width: 300px;
+    }
+
+    .contactme a {
+        font-size: 18px;
+        padding: 8px 36px;
+    }
+
+    .social {
+        margin-top: 20px;
+    }
+  }

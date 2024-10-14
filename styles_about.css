@@ -44,6 +44,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background: black;
     color: #F8F8F8;
 }
@@ -277,10 +278,11 @@ body {
     padding: 10px 40px;
     font-family: Roboto, 'sans-serif';
     font-size: 40px;
+    font-weight: 100;
 }
 
 .me {
-    width: 30%;
+    width: 20%;
 }
 
 .me img {
@@ -293,3 +295,46 @@ body {
     width: 70%;
 }
 
+.about-me p {
+    margin: 30px 0px;
+}
+
+.about p span {
+    font-weight: 400;
+}
+
+.logos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.logos img {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    
+}
+
+.logo-div {
+    width: 200px;
+    height: 150px;
+    background-color: #F8F8F8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.companies {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
+}
+
+.companies p {
+    margin-top: 0px;
+}
